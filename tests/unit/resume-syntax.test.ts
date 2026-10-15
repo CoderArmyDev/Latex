@@ -33,33 +33,33 @@ describe("Resume Syntax Infrastructure", () => {
 
   it("should render labeled href commands without visible raw URLs", () => {
     const ast = parse(
-      "\\href{mailto:jitdhank659@gmail.com}{\\underline{jitdhank659@gmail.com}} | \\href{https://github.com/Jit-6}{\\underline{github.com/Jit-6}}",
+      "\\href{mailto:thecoderarmy@gmail.com}{\\underline{thecoderarmy@gmail.com}} | \\href{https://github.com/CoderArmyDev}{\\underline{github.com/CoderArmyDev}}",
     );
     const html = renderHtml(ast);
 
-    expect(html).toContain('href="mailto:jitdhank659@gmail.com"');
-    expect(html).toContain("<u>jitdhank659@gmail.com</u>");
-    expect(html).toContain('href="https://github.com/Jit-6"');
-    expect(html).toContain("<u>github.com/Jit-6</u>");
-    expect(html).not.toContain(">mailto:jitdhank659@gmail.com");
-    expect(html).not.toContain(">https://github.com/Jit-6");
+    expect(html).toContain('href="mailto:thecoderarmy@gmail.com"');
+    expect(html).toContain("<u>thecoderarmy@gmail.com</u>");
+    expect(html).toContain('href="https://github.com/CoderArmyDev"');
+    expect(html).toContain("<u>github.com/CoderArmyDev</u>");
+    expect(html).not.toContain(">mailto:thecoderarmy@gmail.com");
+    expect(html).not.toContain(">https://github.com/CoderArmyDev");
   });
 
   it("should normalize bare web href destinations for PDF clickability", () => {
     const html = renderHtml(
-      parse("\\href{github.com/Jit-6}{\\underline{github.com/Jit-6}}"),
+      parse("\\href{github.com/CoderArmyDev}{\\underline{github.com/CoderArmyDev}}"),
     );
 
-    expect(html).toContain('href="https://github.com/Jit-6"');
-    expect(html).toContain("<u>github.com/Jit-6</u>");
-    expect(html).not.toContain(">https://github.com/Jit-6");
+    expect(html).toContain('href="https://github.com/CoderArmyDev"');
+    expect(html).toContain("<u>github.com/CoderArmyDev</u>");
+    expect(html).not.toContain(">https://github.com/CoderArmyDev");
   });
 
   it("should suppress one-argument href commands instead of showing raw URLs", () => {
-    const html = renderHtml(parse("\\href{https://github.com/Jit-6}"));
+    const html = renderHtml(parse("\\href{https://github.com/CoderArmyDev}"));
 
     expect(html).toBe("");
-    expect(html).not.toContain("https://github.com/Jit-6");
+    expect(html).not.toContain("https://github.com/CoderArmyDev");
   });
 
   it("should keep text after a one-argument formatting command outside the bold span", () => {

@@ -19,6 +19,6 @@ describe("escapeHtml", () => {
   });
 
   it("should preserve normal text", () => {
-    expect(escapeHtml("Jit Dhank")).toBe("Jit Dhank");
+    expect(escapeHtml("CoderArmy")).toBe("CoderArmy");
   });
 });

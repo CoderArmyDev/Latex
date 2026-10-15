@@ -708,4 +708,4 @@ import type {
 
 ## License
 
-MIT © [Jit Dhank](https://github.com/Jit-6)
+MIT © [CoderArmy](https://github.com/CoderArmyDev)

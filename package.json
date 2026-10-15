@@ -1,9 +1,12 @@
 {
-  "name": "latex",
-  "version": "0.1.0",
+  "name": "@coderarmy/latexlite",
+  "version": "0.1.2",
   "description": "A lightweight JavaScript engine for parsing and rendering a subset of LaTeX syntax into HTML.",
   "license": "MIT",
-  "author": "Jit Dhank",
+  "author": {
+    "name": "CoderArmy",
+    "url": "https://github.com/CoderArmyDev"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

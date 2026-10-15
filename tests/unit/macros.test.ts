@@ -5,10 +5,10 @@ import { LatexParseError } from "../../src/core/errors";
 
 describe("LaTeX Macros", () => {
   it("expands a zero-argument macro", () => {
-    const ast = parse("\\newcommand{\\resumeName}{Jit Dhank}\\resumeName");
+    const ast = parse("\\newcommand{\\resumeName}{CoderArmy}\\resumeName");
     const html = renderHtml(ast);
 
-    expect(html).toBe("Jit Dhank");
+    expect(html).toBe("CoderArmy");
   });
 
   it("expands a one-argument macro", () => {
@@ -55,7 +55,7 @@ describe("LaTeX Macros", () => {
   });
 
   it("does not render macro definitions literally", () => {
-    const ast = parse("\\newcommand{\\resumeName}{Jit Dhank}");
+    const ast = parse("\\newcommand{\\resumeName}{CoderArmy}");
     const html = renderHtml(ast);
 
     expect(html).toBe("");
